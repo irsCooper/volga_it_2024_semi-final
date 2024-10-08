@@ -1,1 +1,0 @@
-# volga_it_2024_semi-final
