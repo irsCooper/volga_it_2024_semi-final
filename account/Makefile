@@ -1,11 +1,11 @@
+SHELL := /bin/bash
 .PHONY:
 .SILENT:
 
 
-install_venv:
+install:
 	python3 -m venv .venv
-	. .venv/bin/activate
-	pip install -r requirements.txt
+	. .venv/bin/activate && pip install -r requirements.txt
 
 
 venv:
@@ -13,4 +13,4 @@ venv:
 
 
 run:
-	python3 main.py
+	uvicorn src.main:app --reload

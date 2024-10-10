@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Path
 import uvicorn
 
-from app.routes import router as router_doctor
+from .routes import router as router_doctor
  
 app = FastAPI(
     title="Doctor Microservices",
