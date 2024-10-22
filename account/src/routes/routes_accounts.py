@@ -1,6 +1,9 @@
 from typing import Annotated
 from fastapi import APIRouter, Path
 
+from schemas.schemas import User, UserBase
+from api import user_crud as crud
+
 router = APIRouter(
     prefix="/Accounts",
     tags=["Accounts"]
@@ -17,9 +20,9 @@ async def update():
     pass
 
 
-@router.get("/")
-async def accounts():
-    pass
+@router.get("/", response_model=list[User])
+async def accounts(session):
+    return await crud.get_users(session=session)
 
 
 @router.post("/")

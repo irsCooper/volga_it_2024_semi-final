@@ -2,7 +2,7 @@ from typing import Annotated
 from fastapi import APIRouter, HTTPException, Path
 from pydantic import ValidationError
 
-from src.schemas import Role, User
+from account.src.schemas.schemas import Role, User
 
 router = APIRouter(
     prefix="/Authentication",
